@@ -1,24 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import CustomNavbar from './components/Navbar';
+import Footer from './components/Footer';
+import Branding from './pages/Branding';
+import Illustration from './pages/Illustration';
+import ProductPhotography from './pages/ProductPhotography';
+import Clothing from './pages/Clothing';
+import ImageGrid from './components/ImageGrid';
+import Home from './pages/Home'; // Add this if you have a Home page
+
+// Wrapper component to use useLocation (outside Router this hook won't work)
+const AppContent = () => {
+  const location = useLocation();
+
+  return (
+    <>
+      <CustomNavbar />
+
+      {location.pathname === '/' && <ImageGrid />}
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/branding" element={<Branding />} />
+        <Route path="/illustration" element={<Illustration />} />
+        <Route path="/photography" element={<ProductPhotography />} />
+        <Route path="/clothing" element={<Clothing />} />
+        {/* Add more routes like About, Clients, Contact if needed */}
+      </Routes>
+
+      <Footer />
+    </>
+  );
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <AppContent />
+    </Router>
   );
 }
 
