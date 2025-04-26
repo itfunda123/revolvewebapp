@@ -1,13 +1,16 @@
 import React from 'react';
 import img1 from '../Assets/productphoto1.jpg';
 import img2 from '../Assets/productphoto2.jpg';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 const ProductPhotography = () => {
   return (
     <div className="product-photo-page" style={{ margin: 0, padding: 0 }}>
+      
       {/* Navbar */}
-      <nav className="navbar navbar-expand-lg navbar-light bg-light" style={{ margin: 0, padding: 0 }}>
+      <nav
+        className="navbar navbar-expand-lg navbar-light bg-white fixed-top"
+        style={{ boxShadow: '0 2px 4px rgba(0,0,0,0.1)', zIndex: 1000 }}
+      >
         <div className="container-fluid">
           <a className="navbar-brand fw-bold" href="#">Revolve</a>
           <button
@@ -18,8 +21,8 @@ const ProductPhotography = () => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav ms-auto">
+          <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul className="navbar-nav">
               <li className="nav-item">
                 <a className="nav-link active" aria-current="page" href="#">Home</a>
               </li>
@@ -38,20 +41,24 @@ const ProductPhotography = () => {
       </nav>
 
       {/* Image Row */}
-      <div className="image-row" style={{
-        display: 'flex',
-        margin: '0',
-        padding: '0',
-        lineHeight: '0',
-      }}>
+      <div
+        className="image-row"
+        style={{
+          display: 'flex',
+          marginTop: '0',  // Ensure the images touch the navbar
+          paddingTop: '0',
+          lineHeight: 0,
+        }}
+      >
         <img
           src={img1}
           alt="Hike Can"
           style={{
             width: '50%',
-            height: '100vh', // fill the screen height
-            objectFit: 'cover', // CUT the inside empty margins
-            display: 'block'
+            height: '100vh',
+            objectFit: 'cover',
+            display: 'block',
+            margin: 0,
           }}
         />
         <img
@@ -59,9 +66,10 @@ const ProductPhotography = () => {
           alt="Obolon Can"
           style={{
             width: '50%',
-            height: '100vh', // fill the screen height
-            objectFit: 'cover', // CUT the inside empty margins
-            display: 'block'
+            height: '100vh',
+            objectFit: 'cover',
+            display: 'block',
+            margin: 0,
           }}
         />
       </div>
