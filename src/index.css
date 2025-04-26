@@ -7,61 +7,59 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-/* Image grid layout tweaks */
-.row.no-gutters {
-  margin-right: 0;
-  margin-left: 0;
-}
-
-.row.no-gutters > .col-12,
-.row.no-gutters > .col-md-4 {
-  padding-right: 0;
-  padding-left: 0;
-}
-.photo-section {
-  margin-top: 0;
-  padding-top: 0;
-}
-
-.image-row {
-  width: 100%;
-}
-
-.half-image {
-  width: 50%;
-  height: auto;
-  object-fit: cover;
-  padding: 0;
+/* Reset spacing for the main section */
+.product-photo-page {
   margin: 0;
+  padding: 0;
+}
+
+/* Image container row */
+.image-row {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0;
+  padding: 0;
+}
+
+/* Half image with fixed height and no spacing */
+.half-img {
+  width: 50%;
+  height: 400px; /* Adjust height as needed */
+  object-fit: cover;
   display: block;
+  margin: 0;
+  padding: 0;
 }
 
-.text-overlay {
-  background-color: white;
+/* Responsive: stack images on small screens */
+@media (max-width: 768px) {
+  .half-img {
+    width: 100%;
+    height: 250px;
+  }
 }
 
-.bottom-bar {
-  background-color: #10237e;
-  color: #ffc107;
-  font-weight: 500;
+/* Typography for the section heading */
+.text-center h2 {
+  margin: 0;
+  padding: 1rem 0;
 }
 
+/* Social icons styling */
 .socials i {
   font-size: 1.2rem;
 }
+
+/* Optional: Remove bottom margin on navbar if needed */
+.navbar {
+  margin-bottom: 0 !important;
+}
+.image-row {
+  display: flex;
+}
+
 .half-img {
   width: 50%;
   height: auto;
   display: block;
-  object-fit: cover;
-}
-
-/* Optional: Make sure the parent doesn’t have spacing */
-.product-photo-page {
-  margin: 0;
-  padding: 0;
 }

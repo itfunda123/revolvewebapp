@@ -5,15 +5,18 @@ import img2 from '../Assets/productphoto2.jpg';
 const ProductPhotography = () => {
   return (
     <div className="product-photo-page">
-      <div className="d-flex flex-wrap no-gutters">
+      {/* Image Row */}
+      <div className="image-row">
         <img src={img1} alt="Hike Can" className="half-img" />
         <img src={img2} alt="Obolon Can" className="half-img" />
       </div>
 
+      {/* Title */}
       <div className="text-center py-3">
         <h2 className="text-warning fw-bold">Product Photography</h2>
       </div>
 
+      {/* Footer */}
       <div className="d-flex justify-content-between align-items-center flex-wrap px-3 py-2 border-top">
         <span>Signage | Wall Branding | Standees | In-store Branding</span>
         <span className="socials">
