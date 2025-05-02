@@ -4,7 +4,7 @@ import img2 from '../Assets/productphoto2.jpg';
 
 const ProductPhotography = () => {
   return (
-    <div className="product-photo-page" style={{ margin: 0, padding: 0 }}>
+    <div className="product-photo-page">
       
       {/* Navbar */}
       <nav
@@ -41,36 +41,16 @@ const ProductPhotography = () => {
       </nav>
 
       {/* Image Row */}
-      <div
-        className="image-row"
-        style={{
-          display: 'flex',
-          marginTop: '0',  // Ensure the images touch the navbar
-          paddingTop: '0',
-          lineHeight: 0,
-        }}
-      >
+      <div className="image-row" style={{ marginTop: '56px' }}>
         <img
           src={img1}
           alt="Hike Can"
-          style={{
-            width: '50%',
-            height: '100vh',
-            objectFit: 'cover',
-            display: 'block',
-            margin: 0,
-          }}
+          className="half-img"
         />
         <img
           src={img2}
           alt="Obolon Can"
-          style={{
-            width: '50%',
-            height: '100vh',
-            objectFit: 'cover',
-            display: 'block',
-            margin: 0,
-          }}
+          className="half-img"
         />
       </div>
 
