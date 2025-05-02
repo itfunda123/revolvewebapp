@@ -16,33 +16,27 @@ body {
 /* Image container row */
 .image-row {
   display: flex;
-  flex-wrap: nowrap;
   margin: 0;
   padding: 0;
+  height: 60vh; /* Adjusted height for images */
 }
 
 /* Half image with fixed height and no spacing */
 .half-img {
   width: 50%;
-  height: 400px; /* Adjust height as needed */
+  height: 100%; /* Adjusted height to fit the container */
   object-fit: cover;
   display: block;
   margin: 0;
   padding: 0;
 }
 
-/* Responsive: stack images on small screens */
-@media (max-width: 768px) {
-  .half-img {
-    width: 100%;
-    height: 250px;
-  }
-}
-
-/* Typography for the section heading */
-.text-center h2 {
-  margin: 0;
-  padding: 1rem 0;
+/* Footer styling */
+.footer {
+  background-color: #fff;
+  padding: 1rem;
+  position: relative;
+  z-index: 10;
 }
 
 /* Social icons styling */
@@ -53,13 +47,4 @@ body {
 /* Optional: Remove bottom margin on navbar if needed */
 .navbar {
   margin-bottom: 0 !important;
-}
-.image-row {
-  display: flex;
-}
-
-.half-img {
-  width: 50%;
-  height: auto;
-  display: block;
 }
